@@ -91,3 +91,40 @@ html,body{
     text-align: center;
     color: whitesmoke;
 }
+.modal{
+    display: none;
+    border-radius: 20px;
+    background-color: #3B3A3A;
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.modal svg{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 87%;
+    bottom: 87%;
+    fill: whitesmoke;
+}
+form{
+    display: grid;
+    width: 80%;
+    gap: 8px;
+    color: whitesmoke;
+
+}
+.active{
+    display: flex;
+    justify-content: center;
+
+}
+form input{
+    border-radius: 10px;
+}
