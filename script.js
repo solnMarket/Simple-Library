@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded',function(){
     form.addEventListener('submit', function(event){
         event.preventDefault();
 
-        
 
-        Book = new Book(title.value,author.value,pages.value,status.value,bookCover.value)
+        newBook = new Book(title.value,author.value,pages.value,status.value,bookCover.value)
+
         let card = document.createElement('div')
         let bookImg=document.createElement('div')
         let bookDesc = document.createElement('div')
@@ -58,11 +58,11 @@ document.addEventListener('DOMContentLoaded',function(){
         bookDesc.appendChild(bookAuthor)
         bookDesc.appendChild(numPages)
 
-        img.style.src=Book.picture
-        bookTitle.textContent=Book.title
-        bookAuthor.textContent=Book.author
-        numPages.textContent=Book.pages
-        button.textContent=Book.read
+        img.style.src=newBook.picture
+        bookTitle.textContent=newBook.title
+        bookAuthor.textContent=newBook.author
+        numPages.textContent=newBook.pages
+        button.textContent=newBook.read
         modal.classList.remove('active')
         
         const file = bookCover.files[0]
@@ -72,11 +72,16 @@ document.addEventListener('DOMContentLoaded',function(){
             img.style.display="block"
         }
         reader.readAsDataURL(file)
-
-        let but = document.querySelectorAll('.book-img button')
-
         
-
+        button.addEventListener('click', function(){
+            if(button.textContent=="Read"){
+                button.textContent="Not Read"
+            }else if(button.textContent=="Not Read"){
+                button.textContent="Read"
+            }
+        })
+        
+        
     })
 
     let but = document.querySelectorAll('.book-img button')
